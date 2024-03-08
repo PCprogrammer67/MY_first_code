@@ -1,0 +1,133 @@
+<!DOCTYPE html> <html> <head> <title>Validation</title> </head> 
+ 
+<!-- INTERNAL CSS --> <style> 
+body { 
+    background-color: lightblue; 
+}
+ h1 { 
+    color: navy;  
+   margin-left: 20px;  
+   text-align:center; 
+} 
+h2 {
+     color: navy; 
+     margin-left: 20px;
+      text-align:center;
+       text-decoration: underline; 
+    }
+     
+li{ 
+    display: inline;
+    padding: 18px; 
+    color : white; 
+} 
+li:hover{ 
+    background-color: yellow; 
+    color:black; 
+} 
+div#incss{ 
+    background-color: brown; 
+    padding: 2px;
+     margin:none;
+      border:none 
+    } 
+a{ 
+    text-decoration:none; 
+} 
+p{ 
+    background-color:none; 
+    font-size:15px; 
+    text-align:justify; } 
+
+    input[type=text],input[type=date], 
+select{
+     width: 30%;
+     padding: 10px;
+      border: 1px solid #ccc;  
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    resize: vertical; 
+}
+ label { 
+    padding: 12px 12px 12px 0;
+     display: inline-block; 
+    }
+    input[type=submit] 
+    { background-color: #4CAF50; 
+        color: white; 
+        padding: 12px 20px;
+         border: none; 
+         border-radius: 4px; 
+         cursor: pointer; 
+         float:center; 
+        } 
+
+        .container { 
+            border-radius: 5px;
+             background-color: #b4b4b4; 
+             padding: 20px; 
+            } 
+
+            .col-25 { 
+                float: left; 
+                width: 15%; 
+                margin-top: 6px; 
+                background-color:#b4b4b4; }
+
+
+            .col-75 { 
+                float: left; 
+                width: 75%; 
+                margin-top: 6px; 
+                background-color: #b4b4b4; 
+                }
+            .row:after { 
+                content: ""; 
+                display: table; 
+                clear: both; 
+                background-color: #b4b4b4; 
+                } 
+                </style> 
+<body> 
+<h1>Sri Balaji Chockalingam Engineering Colege, Arani</h1> <h2>Welcome to Department of Information Technology</h2> <div id ="incss"> <!-- INLINE CSS --> <ul style="list-style-type:none;"> <a href="#"><li>Home</li></a> <a href="#"><li>Department</li></a> <a href="#"><li>Examination</li></a> <a href="#"><li>Adission</li></a> <a href="#"><li>Faculties</li></a> <a href="#"><li>Facilities</li> <a href="#"><li>About Us</li> 
+<a href="#"><li>Contact Us</li> 
+
+ </ul> </div> 
+ 
+<div class="container"> 
+    <form name="myform" action="#" method="post" onSubmit="return validate_form();"> 
+        <div class="row"> <div class="col-25"> <label for="fname">Regiser Number</label> </div> 
+        <div class="col-75"> <input type="text" id="regno" name="regno" onchange="isregno()" placeholder="Your regiser number..."> </div> </div> <div class="row"> <div class="col-25"> <label for="lname">Student Name</label> </div> <div class="col-75"> <input type="text" id="lname" name="studname" onchange="issntxts()" placeholder="Your name.."> </div> </div> <div class="row"> <div class="col-25"> <label for="lname">Date of Birth</label> </div> <div class="col-75"> <input type="date" id="lname" name="dob" placeholder="Your date of birth.."> </div> </div> 
+        <div class="row"> <div class="col-25"> 
+            <label for="lname">Mother Name</label> </div> <div class="col-75"> <input type="text" id="lname" name="mothername" onchange="issntxtm()" placeholder="Your mother name.."> </div> </div> <div class="row"> <div class="col-25"> <label for="lname">Father Name</label> </div> <div class="col-75"> <input type="text" id="lname" name="fathername" onchange="issntxtf()" placeholder="Your father name.."> </div> </div> 
+  
+<div class="col-100" align="middle"> <input type="submit" name="submit" value="Submit"> </div> 
+ 
+</form> 
+</div> 
+ 
+ 
+<script type="text/javascript"> <!-- function validate_form( ) { valid = true; if ( (document.myform.regno.value == "")&& (document.myform.studname.value == "")&& (document.myform.dob.value == "")&&  
+ 
+ 
+(document.myform.mothername.value == "")&& (document.myform.fathername.value == "")) { 
+
+ 
+alert ( "Please fill in the Correct Value." ); valid = false; } else if ( document.myform.regno.value == "" ) { alert ( "Please fill in the 'Your Register' box." ); valid = false; } else if ( document.myform.studname.value == "" ) { alert ( "Please fill in the 'Your Student Name' box." ); valid = false; } else if ( document.myform.dob.value == "" ) { alert ( "Please fill in the 'Your Date of Birth' box." ); valid = false; } else if ( document.myform.mothername.value == "" ) { alert ( "Please fill in the 'Your Mother Name' box." ); valid = false; } else if ( document.myform.fathername.value == "" ) { alert ( "Please fill in the 'Your Father Name' box." ); valid = false; } 
+ 
+ 
+ 
+else { var result=""; 
+
+ result= "Your Register No is : "+ document.myform.regno.value; result =result +"\nYour Entered Name is "+ document.myform.studname.value; result =result +"\nYour Date of Birth is "+ document.myform.dob.value; result =result +"\nYou Mother Name is "+ document.myform.mothername.value; result =result +"\nYour Father Name is "+ document.myform.fathername.value; alert (result); 
+ 
+valid = false; document.myform.regno.value="";  
+ 
+document.myform.studname.value=""; document.myform.dob.value=""; document.myform.mothername.value=""; document.myform.fathername.value=""; } return valid; } function isregno() { var rn=document.myform.regno; if(isNaN(rn.value)==true) { alert("The Entered Value is not a Number"); rn.focus(); rn.select(); } } 
+ 
+function issntxts() { var sn=document.myform.studname; if(isNaN(sn.value)==false) { alert("Please Enter a Text Value to Student Name..."); sn.focus(); sn.select(); } } 
+function issntxtm() { var mn=document.myform.mothername; if(isNaN(mn.value)==false) { alert("Please Enter a Text Value to Mother Name...");  
+mn.focus(); mn.select(); } } 
+function issntxtf() { var fn=document.myform.fathername; 
+if(isNaN(fn.value)==false) { alert("Please Enter a Text Value to Father Name..."); fn.focus(); fn.select(); } } //--> </script> 
+</body> </html> 
